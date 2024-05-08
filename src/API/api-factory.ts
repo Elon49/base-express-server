@@ -2,7 +2,7 @@
 
 import express, { Express } from "express";
 import { configureUsersApi } from './users-api';
-import { configureStoreApi } from './store-api';
+import { configureStoreApi } from './first-feature-api';
 import cors from 'cors';
 
 export class ApiFactory {

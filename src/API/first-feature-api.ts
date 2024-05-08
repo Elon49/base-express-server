@@ -6,6 +6,6 @@ export function configureStoreApi(app: Express) {
     //app.get..
     //app.post/..
 
-    //to all the store related requests
+    //to all the feature related requests
 }
 

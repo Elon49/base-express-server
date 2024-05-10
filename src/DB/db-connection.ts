@@ -9,7 +9,7 @@ export async function initDBConnection(): Promise<void> {
   connection = await mysql.createConnection(dbConnectionOptions);
 }
 
-export async function query(name: string, password: string): Promise<User[]> {
+export async function queryExample(name: string, password: string): Promise<User[]> {
   try {
     const [results] = await connection.query(
       `SELECT * FROM users WHERE name = "${name}" AND password = "${password}"`
@@ -20,26 +20,6 @@ export async function query(name: string, password: string): Promise<User[]> {
     console.log(err);
   }
   return [];
-}
-
-export async function UserNameExist(name: string): Promise<User[]> {
-  const [results]= await connection.query(
-    `SELECT * FROM users WHERE name = "${name}"`
-  )
-  return results as User[];
-}
-
-export async function addUser(username: string, phone: string, email: string, password: string): Promise<void> {
-  try {
-    const x = await connection.query(
-      `INSERT INTO users (name, phone, email, password) VALUES ("${username}", ${phone}, "${email}", "${password}")`
-    );
-    console.log(`x: ${x}`);
-
-  } catch (error) {
-    console.error('Error executing query:', error);
-    throw error;
-  }
 }
 
 

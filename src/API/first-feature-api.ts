@@ -2,7 +2,7 @@
 
 import express , {Express} from "express";
 
-export function configureStoreApi(app: Express) {
+export function configureFeatureApi(app: Express) {
     //app.get..
     //app.post/..
 

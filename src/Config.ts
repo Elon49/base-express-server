@@ -5,6 +5,7 @@ import {ConnectionOptions} from 'mysql2';
 
 export const port = 3000;
 
+// insert your db username databasename & password
 export const dbConnectionOptions: ConnectionOptions = {
     host: 'localhost',
     user: 'root',

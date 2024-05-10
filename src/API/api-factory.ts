@@ -2,7 +2,7 @@
 
 import express, { Express } from "express";
 import { configureUsersApi } from './users-api';
-import { configureStoreApi } from './first-feature-api';
+import { configureFeatureApi } from './first-feature-api';
 import cors from 'cors';
 
 export class ApiFactory {
@@ -24,8 +24,10 @@ export class ApiFactory {
             res.send('hello from express ts server!');
         });
 
+        // defines the api for each feature separately 
+
         configureUsersApi(this.app);
-        configureStoreApi(this.app);
+        configureFeatureApi(this.app);
 
         this.app.listen(this.port, () => console.log(`App listening on port ${port}`));
     }

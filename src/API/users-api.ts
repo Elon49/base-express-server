@@ -1,5 +1,4 @@
 import express , {Express} from "express";
-import { UserNameExist, query, addUser } from '../DB/db-connection';
 
 export function configureUsersApi(app: Express): void {
 
